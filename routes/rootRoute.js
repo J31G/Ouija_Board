@@ -14,11 +14,7 @@ const checkNotAuth = (req, res, next) => {
 };
 
 router.get('/', checkAuth, (req, res) => {
-  res.render('index.ejs');
-});
-
-router.get('/test', checkAuth, (req, res) => {
-  res.render('test.ejs');
+  res.render('index.ejs', { name: req?.user?.name });
 });
 
 router.get('/login', checkNotAuth, (req, res) => {

@@ -1,55 +1,45 @@
 <%- include('./partials/head'); %>
-<body>
+<%- include('./partials/sideNav.ejs'); %>
 
-<div class="wrapper">
-  <!-- <%- include('./partials/topNav'); %> -->
-  <%- include('./partials/sideNav'); %>
-
-  <div id="content" class="m-3">
-
-    <!-- WARNING -->
-    <!-- <div class="alert alert-dismissible alert-warning">
-      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-      <h4 class="alert-heading">Warning!</h4>
-      <p class="mb-0">Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
-    </div> -->
-
-    <h2>Last 5 Words</h2>
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Word</th>
-          <th scope="col">Date/Time</th>
-          <th scope="col">Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Cheesecake</td>
-          <td><%= new Date() %></td>
-          <td>Pending</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td><%= new Date() %></td>
-          <td>Error (<a href="#">See error log</a>)</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Testing</td>
-          <td><%= new Date() %></td>
-          <td>Complete</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <%- include('./partials/footer'); %>
-
-  </div>
+<!-- WARNING -->
+<div class="alert alert-dismissible alert-warning">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <h4 class="alert-heading">Warning!</h4>
+  <p class="mb-0">Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
 </div>
 
+<h2>Last 5 Words</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Word</th>
+      <th scope="col">Date/Time</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Cheesecake</td>
+      <td><%= new Date() %></td>
+      <td>Pending</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td><%= new Date() %></td>
+      <td>Error (<a href="#">See error log</a>)</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Testing</td>
+      <td><%= new Date() %></td>
+      <td>Complete</td>
+    </tr>
+  </tbody>
+</table>
+
+<%- include('./partials/footer.ejs'); %>
 <%- include('./partials/page-end.ejs'); %>
