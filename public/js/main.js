@@ -1,13 +1,10 @@
 $(document).ready(() => {
 
-  $('#sidebarCollapse').on('click', () => {
-      $('#sidebar').toggleClass('active');
-  });
+  // Toggle the side nav
+  $('#sidebarCollapse').on('click', () => $('#sidebar').toggleClass('active'));
 
-  $('#logout').on('click', () => {
-    fetch('/logout', { method: 'POST' });
-    location.reload();
-  });
+  // Logout the user when the logout button is pressed
+  $('#logout').on('click', () => fetch('/logout', { method: 'POST' }));
 
 });
 
