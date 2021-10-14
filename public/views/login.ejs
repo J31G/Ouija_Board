@@ -1,0 +1,28 @@
+<%- include('./partials/head'); %>
+<body class="login-page-body">
+
+  <main class="form-signin">
+    <form action="/login" method="POST">
+      <h1 class="my-3">Ouija Board</h1>
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+  
+      <div class="form-floating">
+        <input type="email" class="form-control" id="email" name="email" required placeholder="name@example.com">
+        <label for="email">Email</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="password" name="password" required placeholder="Password">
+        <label for="password">Password</label>
+      </div>
+  
+      <div class="checkbox my-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">© <%= new Date().getFullYear() %> BiG Bots. All rights reserved.</p>
+    </form>
+  </main>
+
+<%- include('./partials/page-end.ejs'); %>
