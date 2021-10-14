@@ -17,6 +17,10 @@ router.get('/', checkAuth, (req, res) => {
   res.render('index.ejs');
 });
 
+router.get('/test', checkAuth, (req, res) => {
+  res.render('test.ejs');
+});
+
 router.get('/login', checkNotAuth, (req, res) => {
   res.render('login.ejs');
 });

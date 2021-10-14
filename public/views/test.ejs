@@ -1,0 +1,82 @@
+<%- include('./partials/head'); %>
+<body>
+
+  <div class="wrapper">
+
+    <!-- Sidebar -->
+    <nav id="sidebar" class="text-white bg-dark">
+      <div class="sidebar-header">
+          <h3>Bootstrap Sidebar</h3>
+      </div>
+
+      <ul class="list-unstyled components">
+          <p>Dummy Heading</p>
+          <li class="active">
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+                  <li>
+                      <a href="#">Home 1</a>
+                  </li>
+                  <li>
+                      <a href="#">Home 2</a>
+                  </li>
+                  <li>
+                      <a href="#">Home 3</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <a href="#">About</a>
+          </li>
+          <li>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                  <li>
+                      <a href="#">Page 1</a>
+                  </li>
+                  <li>
+                      <a href="#">Page 2</a>
+                  </li>
+                  <li>
+                      <a href="#">Page 3</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <a href="#">Portfolio</a>
+          </li>
+          <li>
+              <a href="#">Contact</a>
+          </li>
+      </ul>
+  </nav>
+
+    <!-- Page Content -->
+    <div id="content">
+        <!-- We'll fill this with dummy content -->
+        <div id="content">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+      
+                  <button type="button" id="sidebarCollapse" class="btn btn-info">
+                      <i class="fas fa-align-left"></i>
+                      <span>Toggle Sidebar</span>
+                  </button>
+      
+              </div>
+          </nav>
+          <main class="m-3">
+
+            <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum finibus purus vitae varius. Fusce vel elit vel sapien malesuada rutrum et vel tortor. Vestibulum laoreet elementum urna, et laoreet velit elementum vitae. Nunc id justo sagittis leo sagittis ornare vitae nec erat. Sed nisi lorem, viverra eget eros vitae, sagittis tempus diam. Donec diam magna, convallis eleifend quam nec, varius pharetra velit. Pellentesque in convallis est. Duis mauris tellus, suscipit sed magna quis, porta viverra ligula. Vivamus enim libero, ultricies in libero fermentum, laoreet porttitor turpis. Morbi faucibus, massa fringilla sollicitudin tempus, felis tortor gravida metus, at iaculis turpis mi eu mauris. Quisque sagittis magna sed tellus auctor pharetra. Aliquam mollis vulputate dui, eu interdum lorem venenatis eget. Praesent finibus orci sed sem aliquet ullamcorper. Nullam a ligula at dui varius ornare sit amet quis massa. Aenean sed iaculis velit, vitae laoreet massa.</p>
+
+            <p class="my-3">Nunc at varius metus, ultricies maximus purus. Quisque eget suscipit sem. Donec condimentum, diam id ullamcorper efficitur, nunc eros faucibus justo, molestie ornare nisl quam sit amet turpis. Aenean viverra mollis enim, eget accumsan purus hendrerit eleifend. Morbi condimentum magna ac odio hendrerit vulputate. Suspendisse et faucibus dui, ut posuere magna. Morbi sit amet accumsan quam. Morbi vel vehicula est. Aenean consequat lorem ut nulla sollicitudin, at auctor felis tristique. Nulla vel massa suscipit, semper risus in, feugiat dui. Duis ac cursus velit.</p>
+
+            <p class="my-3">Phasellus euismod, risus ac luctus convallis, augue erat dignissim metus, ut tempus ligula est dictum enim. Nullam malesuada est id efficitur imperdiet. Nunc condimentum placerat ultrices. Donec egestas, orci ut pretium pulvinar, elit augue luctus orci, id sagittis justo nunc ut leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nam consectetur dolor vel nulla pretium, ut fringilla quam pellentesque. Vestibulum quam ipsum, auctor sed ornare vitae, eleifend ut erat. Sed at congue turpis. Nam in justo fringilla, blandit purus nec, commodo ante. Donec commodo mi enim, eget cursus orci dictum id. Pellentesque vitae sapien vitae eros dictum venenatis in id tortor.</p>
+
+          </main>
+        </div>
+    </div>
+
+  </div>
+
+<%- include('./partials/page-end.ejs'); %>
