@@ -13,20 +13,17 @@ const checkNotAuth = (req, res, next) => {
   return res.redirect('/');
 };
 
-router.get('/', checkAuth, (req, res) => {
-  res.render('index.ejs', { name: req?.user?.name });
-});
+// GET ROUTES
+router.get('/', checkAuth, (req, res) => res.render('index.ejs', { name: req?.user?.name }));
+router.get('/config', checkAuth, (req, res) => res.render('config.ejs', { name: req?.user?.name }));
+router.get('/login', checkNotAuth, (req, res) => res.render('login.ejs'));
 
-router.get('/login', checkNotAuth, (req, res) => {
-  res.render('login.ejs');
-});
-
+// POST ROUTES
 router.post('/login', checkNotAuth, passport.authenticate('local', {
   successRedirect: '/',
   failureRedirect: '/login',
   failureFlash: true,
 }));
-
 router.post('/logout', (req, res) => {
   req.logOut();
   res.redirect('/login');

@@ -7,7 +7,7 @@ module.exports.initialise = (passport, getUserByEmail, getUserById) => {
     if (!user) return done(null, false, { message: 'No user with that email' });
 
     try {
-      if (!await bcrypt.compare(password, user.password)) return done(null, false, { message: 'Password incorrect' });
+      if (!await bcrypt.compare(password, user.PASSWORD)) return done(null, false, { message: 'Password incorrect' });
       return done(null, user);
     } catch (error) {
       return done(error);
@@ -15,6 +15,6 @@ module.exports.initialise = (passport, getUserByEmail, getUserById) => {
   };
 
   passport.use(new LocalStrategy({ usernameField: 'email' }, authenticateUser));
-  passport.serializeUser((user, done) => done(null, user.id));
+  passport.serializeUser((user, done) => done(null, user.ID));
   passport.deserializeUser((id, done) => done(null, getUserById(id)));
 };

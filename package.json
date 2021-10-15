@@ -27,6 +27,8 @@
     "express-flash": "^0.0.2",
     "express-session": "^1.17.2",
     "passport": "^0.5.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^4.2.0"
   }
 }
