@@ -69,3 +69,15 @@ img {
 #sidebar.active {
   margin-left: -280px;
 }
+
+#user-edit:hover,
+#user-edit:active {
+  color: green !important;
+  cursor: pointer;
+}
+
+#user-delete:hover,
+#user-delete:active {
+  color: red !important;
+  cursor: pointer;
+}

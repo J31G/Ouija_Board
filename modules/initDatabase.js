@@ -21,4 +21,6 @@ module.exports.initDB = async () => {
   );
 
   db.close();
+
+  return users;
 };

@@ -1,0 +1,22 @@
+<%- include('./partials/head'); %>
+<%- include('./partials/sideNav.ejs'); %>
+<%- include('./partials/users.ejs'); %>
+<%- include('./partials/profile.ejs'); %>
+
+<div class="px-4 pt-3 my-3 text-center border-bottom">
+  <h1 class="display-4 fw-bold">Pre-selected Words</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">If you're in a rush or just not feeling inventive, here are some pre-selected words we have tested and know are working.</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5"></div>
+  </div>
+  <div class="overflow-hidden" style="max-height: 30vh;">
+  </div>
+</div>
+
+<%- include('./partials/footer.ejs'); %>
+
+<script>
+  document.title = "Pre-selected";
+</script>
+
+<%- include('./partials/page-end.ejs'); %>

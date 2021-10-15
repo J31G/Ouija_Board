@@ -1,0 +1,36 @@
+<%- include('./partials/head'); %>
+<%- include('./partials/sideNav.ejs'); %>
+<%- include('./partials/users.ejs'); %>
+<%- include('./partials/profile.ejs'); %>
+
+<div class="px-4 pt-3 my-3 text-center border-bottom">
+  <h1 class="display-4 fw-bold">Manual Input</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">Type a word below to get the board to spell it out for you. If you are having problems or in a rush, the <a href="/pre-selected">pre-selected</a> words section might be a better idea. </p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5"></div>
+  </div>
+  <div class="overflow-hidden" style="max-height: 30vh;">
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Manual Input</label>
+  <input class="form-control form-control-lg py-5 fs-1 text-center" type="text" placeholder="Enter a word..." id="inputLarge">
+</div>
+
+<div class="row">
+  <div class="col-6 text-start">
+    <button type="button" class="btn btn-danger btn-lg my-4">Clear</button>
+  </div>
+  <div class="col-6 text-end">
+    <button type="button" class="btn btn-primary btn-lg my-4">Send</button>
+  </div>
+</div>
+
+<%- include('./partials/footer.ejs'); %>
+
+<script>
+  document.title = "Manual Input";
+</script>
+
+<%- include('./partials/page-end.ejs'); %>

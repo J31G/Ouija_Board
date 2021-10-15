@@ -1,5 +1,6 @@
 const express = require('express');
 const passport = require('passport');
+const db = require('../modules/initDatabase');
 
 const router = express.Router();
 
@@ -14,8 +15,12 @@ const checkNotAuth = (req, res, next) => {
 };
 
 // GET ROUTES
-router.get('/', checkAuth, (req, res) => res.render('index.ejs', { name: req?.user?.name }));
-router.get('/config', checkAuth, (req, res) => res.render('config.ejs', { name: req?.user?.name }));
+router.get('/', checkAuth, async (req, res) => res.render('index.ejs', { name: req?.user?.NAME, users: await db.initDB() }));
+router.get('/config', checkAuth, async (req, res) => res.render('config.ejs', { name: req?.user?.NAME, users: await db.initDB() }));
+router.get('/how-to', checkAuth, async (req, res) => res.render('how-to.ejs', { name: req?.user?.NAME, users: await db.initDB() }));
+router.get('/manual-input', checkAuth, async (req, res) => res.render('manual-input.ejs', { name: req?.user?.NAME, users: await db.initDB() }));
+router.get('/pre-selected', checkAuth, async (req, res) => res.render('pre-selected.ejs', { name: req?.user?.NAME, users: await db.initDB() }));
+router.get('/users', checkAuth, async (req, res) => res.render('other-users.ejs', { name: req?.user?.NAME, users: await db.initDB() }));
 router.get('/login', checkNotAuth, (req, res) => res.render('login.ejs'));
 
 // POST ROUTES
