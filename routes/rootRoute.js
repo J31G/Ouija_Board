@@ -29,9 +29,19 @@ router.post('/login', checkNotAuth, passport.authenticate('local', {
   failureRedirect: '/login',
   failureFlash: true,
 }));
-router.post('/logout', (req, res) => {
+router.post('/logout', checkAuth, (req, res) => {
   req.logOut();
   res.redirect('/login');
+});
+router.post('/word', checkAuth, (req, res) => {
+  console.log(req?.body);
+
+  // 200 - All good!
+  res.status(200);
+  res.send({
+    statusCode: 200,
+    statusMessage: 'Success',
+  });
 });
 
 module.exports = router;

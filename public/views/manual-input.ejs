@@ -20,11 +20,25 @@
 
 <div class="row">
   <div class="col-6 text-start">
-    <button type="button" class="btn btn-danger btn-lg my-4">Clear</button>
+    <button type="button" class="btn btn-danger btn-lg my-4" onclick="$( '#inputLarge' ).val('');">Clear</button>
   </div>
   <div class="col-6 text-end">
-    <button type="button" class="btn btn-primary btn-lg my-4">Send</button>
+    <button type="button" id="manual-submit" class="btn btn-primary btn-lg my-4">Send</button>
   </div>
+</div>
+
+<!-- TOAST NOTIFICATION -->
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+
+  <div class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        The word " <span id="word-display" class="fw-bold"></span> " has been sucessfully sent to the board.
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+
 </div>
 
 <%- include('./partials/footer.ejs'); %>
