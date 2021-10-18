@@ -19,8 +19,6 @@ $(document).ready(() => {
     return new bootstrap.Toast(toastEl);
   });
 
-
-
   // Manual input: get value
   $( '#manual-submit' ).on( 'click' , () => {
 
@@ -38,6 +36,20 @@ $(document).ready(() => {
   const sendWord = async (word) => {
     await $.post( '/word', { 'word': word } );
   }
+
+  // Get char data from config page
+  $('#configSubmit').on('click', async () => {
+    const charArray = [];
+    $('.characters').each((i, el) => {
+      charArray.push({
+        char: $(el).find('label > strong').text().replace(/[^A-Za-z0-9]+/gi, ''),
+        X: $(el).find('div > div:nth-child(1) > input').val(),
+        Y: $(el).find('div > div:nth-child(2) > input').val(),
+      });
+    });
+    const reply = await $.post( '/config', { data: charArray } );
+    if(reply.statusCode === 200) location.reload();
+  });
 
 });
 

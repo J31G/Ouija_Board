@@ -27,406 +27,50 @@
 
         <div class="container-fluid">
           <div class="row">
-
             <div class="col">
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" A "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
 
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" B "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
+              <% const lowerLetters = allChars.filter((l) => l.TYPE === 'letter' && l.ID <= 13) %>
+              <% lowerLetters.forEach(l => { %>
 
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" C "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+                  <div class="form-group characters">
+                    <label class="form-label mt-4"><strong>" <%= l.CHARACTER %>  "</strong></label>
+                    <div class="form-group">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text">X</span>
+                        <input type="number" class="form-control" aria-label="X location of letter" value="<%= l.X %>">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text">Y</span>
+                        <input type="number" class="form-control" aria-label="Y location of letter" value="<%= l.Y %>">
+                      </div>
+                    </div>
                   </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
 
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" D "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" E "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" F "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" G "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
+              <% }); %>
 
             </div>
 
             <div class="col">
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" H "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
 
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" I "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
+              <% const upperLetters = allChars.filter((l) => l.TYPE === 'letter' && l.ID > 13) %>
+              <% upperLetters.forEach(l => { %>
 
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" J "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+                  <div class="form-group characters">
+                    <label class="form-label mt-4"><strong>" <%= l.CHARACTER %>  "</strong></label>
+                    <div class="form-group">
+                      <div class="input-group mb-3">
+          
+                        <span class="input-group-text">X</span>
+                        <input type="number" class="form-control" aria-label="X location of letter" value="<%= l.X %>">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text">Y</span>
+                        <input type="number" class="form-control" aria-label="Y location of letter" value="<%= l.Y %>">
+                      </div>
+                    </div>
                   </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
 
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" K "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" L "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" M "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" N "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="col">
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" O "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" P "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" Q "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" R "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" S "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" T "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" U "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="col">
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" V "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" W "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" X "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" Y "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" Z "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
+              <% }); %>
 
             </div>
 
@@ -450,160 +94,51 @@
           <div class="row">
 
             <div class="col">
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" 0 "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
 
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" 1 "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
+              <% const lowerNumbers = allChars.filter((l) => l.TYPE === 'number' && l.ID <= 31) %>
+              <% lowerNumbers.forEach(l => { %>
 
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" 2 "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+                  <div class="form-group characters">
+                    <label class="form-label mt-4"><strong>" <%= l.CHARACTER %>  "</strong></label>
+                    <div class="form-group">
+                      <div class="input-group mb-3">
+          
+                        <span class="input-group-text">X</span>
+                        <input type="number" class="form-control" aria-label="X location of letter" value="<%= l.X %>">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text">Y</span>
+                        <input type="number" class="form-control" aria-label="Y location of letter" value="<%= l.Y %>">
+                      </div>
+                    </div>
                   </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
 
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" 3 "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" 4 "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
+              <% }); %>
 
             </div>
 
             <div class="col">
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" 5 "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
 
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" 6 "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
+              <% const upperNumbers = allChars.filter((l) => l.TYPE === 'number' && l.ID > 31) %>
+              <% upperNumbers.forEach(l => { %>
 
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" 7 "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+                  <div class="form-group characters">
+                    <label class="form-label mt-4"><strong>" <%= l.CHARACTER %>  "</strong></label>
+                    <div class="form-group">
+                      <div class="input-group mb-3">
+          
+                        <span class="input-group-text">X</span>
+                        <input type="number" class="form-control" aria-label="X location of letter" value="<%= l.X %>">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text">Y</span>
+                        <input type="number" class="form-control" aria-label="Y location of letter" value="<%= l.Y %>">
+                      </div>
+                    </div>
                   </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
 
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" 8 "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
+              <% }); %>
 
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" 9 "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
-
-            </div>
           </div>
         </div>
 
@@ -624,52 +159,27 @@
           <div class="row">
 
             <div class="col">
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" Yes "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
 
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" No "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
+              <% const otherChars = allChars.filter((l) => l.TYPE === 'other') %>
+              <% otherChars.forEach(l => { %>
 
-              <div class="form-group">
-                <label class="form-label mt-4"><strong>" Good Bye "</strong></label>
-                <div class="form-group">
-                  <div class="input-group mb-3">
-      
-                    <span class="input-group-text">X</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+                  <div class="form-group characters">
+                    <label class="form-label mt-4"><strong>" <%= l.CHARACTER %>  "</strong></label>
+                    <div class="form-group">
+                      <div class="input-group mb-3">
+          
+                        <span class="input-group-text">X</span>
+                        <input type="number" class="form-control" aria-label="X location of letter" value="<%= l.X %>">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text">Y</span>
+                        <input type="number" class="form-control" aria-label="Y location of letter" value="<%= l.Y %>">
+                      </div>
+                    </div>
                   </div>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">Y</span>
-                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  </div>
-                </div>
-              </div>
 
-            </div>
+              <% }); %>
+
           </div>
         </div>
 
@@ -683,7 +193,7 @@
       <button type="button" class="btn btn-danger btn-lg my-4">Reset Config</button>
     </div>
     <div class="col-6 text-end">
-      <button type="button" class="btn btn-primary btn-lg my-4">Save</button>
+      <button type="button" id="configSubmit" class="btn btn-primary btn-lg my-4">Save</button>
     </div>
   </div>
 
