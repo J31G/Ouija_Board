@@ -1,10 +1,16 @@
 const { Board } = require('johnny-five');
 
+// Setup Board
 const board = new Board();
 
 // Current location of pointer on board
-let locationX = null;
-let locationY = null;
+let locationX = 0;
+let locationY = 0;
+
+// Time to wait between letters
+let waitBetweenLetters = 1000;
+
+module.exports.waitBetweenLetters = waitBetweenLetters;
 
 module.exports.Stepper = class Stepper {
   constructor(config) {
@@ -23,7 +29,7 @@ module.exports.Stepper = class Stepper {
       this.move({
         speed: { X: 0, Y: 0 },
         steps: { X: 18560, Y: 11392 },
-        direction: { X: 'down', Y: 'left' },
+        direction: { X: 'left', Y: 'down' },
         wait: 5000,
       }).then(() => {
         this.setZero();
@@ -46,6 +52,11 @@ module.exports.Stepper = class Stepper {
     return this;
   }
 
+  setWait(wait) {
+    waitBetweenLetters = wait;
+    return this;
+  }
+
   step(amount) {
     // X
     for (let i = 0; i < amount?.X; i += 1) {
@@ -63,8 +74,8 @@ module.exports.Stepper = class Stepper {
 
   move(options) {
     // Set direction
-    board.digitalWrite(this?.config?.dirPin?.X, options?.direction?.X === 'up' ? 1 : 0);
-    board.digitalWrite(this?.config?.dirPin?.Y, options?.direction?.Y === 'right' ? 1 : 0);
+    board.digitalWrite(this?.config?.dirPin?.X, options?.direction?.X === 'left' ? 1 : 0);
+    board.digitalWrite(this?.config?.dirPin?.Y, options?.direction?.Y === 'up' ? 1 : 0);
 
     const stepperX = new Promise((resolve) => {
       let stepCount = 0;
@@ -73,19 +84,11 @@ module.exports.Stepper = class Stepper {
         // If steps are reached, exit code
         if (stepCount === options?.steps?.X) {
           clearInterval(id);
-          setTimeout(() => resolve(this), options?.wait);
+          setTimeout(() => resolve(this), options?.wait || waitBetweenLetters);
         }
 
         // Step the stepper
         this.step({ X: 2 });
-
-        // Set location X
-        if (options?.direction?.X === 'up') {
-          locationX += 1;
-        } else locationX -= 1;
-
-        // TEMP: Log out which step we are on
-        // console.log(`X: ${locationX}`);
 
         // Increase out count
         stepCount += 1;
@@ -105,14 +108,6 @@ module.exports.Stepper = class Stepper {
         // Step the stepper
         this.step({ Y: 2 });
 
-        // Set location Y
-        if (options?.direction?.Y === 'right') {
-          locationY += 1;
-        } else locationY -= 1;
-
-        // TEMP: Log out which step we are on
-        // console.log(`Y: ${locationY}`);
-
         // Increase out count
         stepCount += 1;
       }, options?.speed?.Y);
@@ -122,6 +117,66 @@ module.exports.Stepper = class Stepper {
       return stepperX;
     }
     return stepperY;
+  }
+
+  letter(data) {
+    // the final array of board intructions
+    const wordArray = [];
+
+    // Loop through each word and work out what needs to be done
+    for (let i = 0; i < data.length; i += 1) {
+      const amountLeft = {
+        X: { amount: 0, dir: 'right' },
+        Y: { amount: 0, dir: 'up' },
+      };
+
+      // Work out the X (LEFT/RIGHT)
+      if (locationX < data[i].X) {
+        amountLeft.X = {
+          amount: data[i].X - locationX,
+          dir: 'right',
+        };
+        locationX += amountLeft.X.amount;
+      } else if (locationX > data[i].X) {
+        amountLeft.X = {
+          amount: locationX - data[i].X,
+          dir: 'left',
+        };
+        locationX -= amountLeft.X.amount;
+      }
+
+      // Work out the Y (UP/DOWN)
+      if (locationY < data[i].Y) {
+        amountLeft.Y = {
+          amount: data[i].Y - locationY,
+          dir: 'up',
+        };
+        locationY += amountLeft.Y.amount;
+      } else if (locationY > data[i].Y) {
+        amountLeft.Y = {
+          amount: locationY - data[i].Y,
+          dir: 'down',
+        };
+        locationY -= amountLeft.Y.amount;
+      }
+
+      // Push into our array
+      wordArray.push(amountLeft);
+    }
+    // TEMP: Work out what is happening
+    console.log(wordArray);
+
+    // SEEMS TO BE THE ISSUE!!
+    wordArray.forEach((word) => {
+      this.move({
+        speed: { X: 1, Y: 1 },
+        steps: { X: word.X.amount, Y: word.Y.amount },
+        direction: { X: word.X.dir, Y: word.Y.dir },
+        wait: 2500,
+      });
+    });
+
+    return this;
   }
 };
 

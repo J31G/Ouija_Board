@@ -34,7 +34,7 @@ $(document).ready(() => {
 
   // Send word
   const sendWord = async (word) => {
-    await $.post( '/word', { 'word': word } );
+    await $.post( '/board/word', { 'word': word } );
   }
 
   // Get char data from config page
@@ -49,6 +49,10 @@ $(document).ready(() => {
     });
     const reply = await $.post( '/config', { data: charArray } );
     if(reply.statusCode === 200) location.reload();
+  });
+
+  $('#initSubmit').on('click', async () => {
+    $.post( '/board/init' );
   });
 
 });

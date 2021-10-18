@@ -4,6 +4,7 @@ require('dotenv').config();
 
 // Local Imports
 const rootRoute = require('./routes/rootRoute');
+const boardRoute = require('./routes/boardRoute');
 const { initExpress } = require('./modules/initExpress');
 require('./modules/initDatabase').initDB();
 
@@ -13,6 +14,7 @@ initExpress(app);
 
 // Express Routes
 app.use('/', rootRoute);
+app.use('/board', boardRoute);
 
 // HTTP address/port for our web app
 const server = app.listen(process.env.PORT || 5000, process.env.ADDRESS || 'localhost', () => {
