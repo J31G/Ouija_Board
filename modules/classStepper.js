@@ -169,7 +169,7 @@ module.exports.Stepper = class Stepper {
     // SEEMS TO BE THE ISSUE!!
     wordArray.forEach((word) => {
       this.move({
-        speed: { X: 1, Y: 1 },
+        speed: { X: 0, Y: 0 },
         steps: { X: word.X.amount, Y: word.Y.amount },
         direction: { X: word.X.dir, Y: word.Y.dir },
         wait: 2500,
