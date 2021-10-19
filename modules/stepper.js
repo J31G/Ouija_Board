@@ -31,9 +31,6 @@ board.on('ready', () => {
     console.log('X & Y Reset');
   };
 
-  module.exports.stepperY = stepperY;
-  module.exports.stepperX = stepperX;
-
   module.exports.move = (options) => {
     const running = new Promise((resolve) => {
       let bothComplete = 0;
