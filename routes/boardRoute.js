@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { getCharacters } = require('../modules/dbQueries');
+const { getCharacters, getDelay } = require('../modules/dbQueries');
 const stepper = require('../modules/stepper');
 
 const router = express.Router();
@@ -20,8 +20,8 @@ const sendStatus = (res, statusCode, statusMessage) => {
 
 router.post('/init', checkAuth, async (req, res) => {
   await stepper.move({
-    X: { dir: 1, steps: 18600 },
-    Y: { dir: 0, steps: 11350 },
+    X: { dir: 1, steps: 37000 },
+    Y: { dir: 0, steps: 22000 },
   });
   stepper.reset();
   sendStatus(res, 200, 'Success');
@@ -51,7 +51,7 @@ router.post('/word', checkAuth, async (req, res) => {
   let i = 0;
   let running = false;
 
-  const id = setInterval(() => {
+  const id = setInterval(async () => {
     // If word is complete, exit
     if (i === decodedWord.length - 1) clearInterval(id);
 
@@ -61,16 +61,19 @@ router.post('/word', checkAuth, async (req, res) => {
     // Set out board as running
     running = true;
 
+    // Get letter delay from DB
+    const letterDelay = await getDelay();
+
     // Move our steppers to letter
     stepper.move({
       X: { dir: decodedWord[i].X.dir, steps: decodedWord[i].X.amount },
       Y: { dir: decodedWord[i].Y.dir, steps: decodedWord[i].Y.amount },
     }).then(() => {
-      // Once completed letter, wait 5 secs then move to next one
+      // Once completed letter, wait ${letterDelay} secs then move to next one
       setTimeout(() => {
         i += 1;
         running = false;
-      }, 5000);
+      }, letterDelay[0].VALUE);
     });
   }, 1000);
 

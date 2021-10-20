@@ -28,3 +28,31 @@ module.exports.saveConfig = async (data) => {
 
   db.close();
 };
+
+module.exports.getDelay = async () => {
+  // Open datafiles
+  const db = await open({
+    filename: './db/app.db',
+    driver: sqlite3.Database,
+  });
+
+  const delay = await db.all("SELECT VALUE FROM CONFIG WHERE KEY = 'DELAY_BETWEEN_CHARS'");
+
+  db.close();
+
+  return delay;
+};
+
+module.exports.setDelay = async (amount) => {
+  // Open datafiles
+  const db = await open({
+    filename: './db/app.db',
+    driver: sqlite3.Database,
+  });
+
+  const delay = await db.all(`UPDATE CONFIG SET VALUE = ${amount} WHERE KEY = 'DELAY_BETWEEN_CHARS'`);
+
+  db.close();
+
+  return delay;
+};

@@ -47,7 +47,7 @@ $(document).ready(() => {
         Y: $(el).find('div > div:nth-child(2) > input').val(),
       });
     });
-    const reply = await $.post( '/config', { data: charArray } );
+    const reply = await $.post( '/config', { data: charArray, extra: { delay: $('#delay').val() } } );
     if(reply.statusCode === 200) location.reload();
   });
 

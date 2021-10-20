@@ -21,10 +21,6 @@ board.on('ready', () => {
     pins: [2, 5],
   });
 
-  // Set stepper to 180 RPM with acceleration and deceleration
-  stepperY.rpm(180).accel(1600).decel(1600);
-  stepperX.rpm(180).accel(1600).decel(1600);
-
   module.exports.reset = () => {
     locationX = 0;
     locationY = 0;
@@ -44,13 +40,19 @@ board.on('ready', () => {
       };
 
       stepperY.step({
-        steps: options?.Y?.steps || 0,
+        steps: Math.round(options?.Y?.steps || 0),
         direction: options?.Y?.dir,
+        rpm: 180,
+        accel: Math.round(options?.Y?.steps / 2),
+        decel: Math.round(options?.Y?.steps / 2),
       }, () => done());
 
       stepperX.step({
         steps: options?.X?.steps || 0,
         direction: options?.X?.dir,
+        rpm: 180,
+        accel: Math.round(options?.X?.steps / 2),
+        decel: Math.round(options?.X?.steps / 2),
       }, () => done());
     });
     return running;
