@@ -30,7 +30,7 @@ router.post('/init', checkAuth, async (req, res) => {
 // Word handler
 router.post('/word', checkAuth, async (req, res) => {
   // Make array out of word
-  const wordArray = Array.from(req?.body?.word.toLowerCase());
+  const wordArray = Array.from(`${req?.body?.word.toLowerCase()} `);
 
   // Get list db entries for matches
   const allCharacters = await getCharacters();

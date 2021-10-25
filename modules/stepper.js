@@ -42,17 +42,17 @@ board.on('ready', () => {
       stepperY.step({
         steps: Math.round(options?.Y?.steps || 0),
         direction: options?.Y?.dir,
-        rpm: 180,
-        accel: Math.round(options?.Y?.steps / 2),
-        decel: Math.round(options?.Y?.steps / 2),
+        rpm: 1800,
+        accel: 2000,
+        decel: 2000,
       }, () => done());
 
       stepperX.step({
         steps: options?.X?.steps || 0,
         direction: options?.X?.dir,
-        rpm: 180,
-        accel: Math.round(options?.X?.steps / 2),
-        decel: Math.round(options?.X?.steps / 2),
+        rpm: 1800,
+        accel: 2000,
+        decel: 2000,
       }, () => done());
     });
     return running;
