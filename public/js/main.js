@@ -3,14 +3,17 @@ $(document).ready(() => {
   // Toggle the side nav
   $('#sidebarCollapse').on('click', () => $('#sidebar').toggleClass('active'));
 
+  // Hide nav by default if smaller screen
+  if ($(window).width() <= 768) {
+    $('#sidebar').toggleClass('active');
+  }
+
   // Logout the user when the logout button is pressed
   $('#logout').on('click', () => $.post( '/logout' ));
 
   // Switch nav items
-  $(() => {
-    $('#nav li a').each(function () {
-        if (location.pathname === $(this).attr("href")) $(this).addClass('active');
-    });
+  $('#nav li a').each(function () {
+      if (location.pathname === $(this).attr("href")) $(this).addClass('active');
   });
 
   // Init toast notifications
@@ -30,6 +33,18 @@ $(document).ready(() => {
 
     toastList.forEach((toast) => toast.show());
 
+  });
+
+  $( '#yes-btn' ).on( 'click', () => {
+    sendWord( '1' );
+    $( '#word-display' ).text( 'Yes' );
+    toastList.forEach((toast) => toast.show());
+  });
+
+  $( '#no-btn' ).on( 'click', () => {
+    sendWord( '0' );
+    $( '#word-display' ).text( 'No' );
+    toastList.forEach((toast) => toast.show());
   });
 
   // Send word

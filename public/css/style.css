@@ -81,3 +81,6 @@ img {
   color: red !important;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+}
